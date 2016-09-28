@@ -4,14 +4,7 @@ local nazwaSerwera = "serwerze";
 local bodyModel = ["hum_body_Naked0", "Hum_Body_Babe0"];
 local headModel =["Hum_Head_Psionic", "Hum_Head_Bald", "Hum_Head_Fighter", "Hum_Head_FatBald", "Hum_Head_Thief", "Hum_Head_Pony", "HUM_HEAD_LONGHAIR", "HUM_HEAD_MUSTACHE", "HUM_HEAD_SIDEBURNS", "HUM_HEAD_BEARD", "HUM_HEAD_BEARD2", "HUM_HEAD_LONG", "Hum_Head_Babe", "Hum_Head_Babe1", "Hum_Head_Babe2", "Hum_Head_Babe3", "Hum_Head_Babe4", "Hum_Head_Babe5", "Hum_Head_Babe6", "Hum_Head_Babe7", "Hum_Head_Babe8", "Hum_Head_BabeHair"];
 local Dementor;
-local Straznik;
-local Straznik2;
-local Straznik3;
-local Straznik4;
-local Straznik5;
-local Straznik6;
-local Straznik7;
-local Straznik8;
+local stupidBot = {};
 local Trenerso;
 local Trenerwo;
 local Kwatermistrz;
@@ -20,78 +13,66 @@ local Dozorca;
 
 function onInit()
 {
+	for(local i = 0; i < 7; ++i)
+	{
+		stupidBot[i] <- {};
+	}	
+	stupidBot[0] = createBot("StraÂ¿nik");
+	stupidBot[0].setPosition(-7098, -1224.23, 5419.4);
+	stupidBot[0].setAngle(314.417);
+	stupidBot[0].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Bald", 1); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[0].wearArmor("GRD_L");
+	stupidBot[0].playAnimation("S_HGUARD");
+	stupidBot[0].m_Immortal = true;
+	
+	stupidBot[1] = createBot("StraÂ¿nik");
+	stupidBot[1].setPosition(-7540.14, -1217.79, 5132.39);
+	stupidBot[1].setAngle(349.435);
+	stupidBot[1].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Fighter", 2); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[1].wearArmor("GRD_L");
+	stupidBot[1].playAnimation("S_HGUARD");
+	stupidBot[1].m_Immortal = true;
 
-{
-	Straznik = createBot("Stra¿nik");
-	Straznik.setPosition(-7098, -1224.23, 5419.4);
-	Straznik.setAngle(314.417);
-	Straznik.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Bald", 1); //Babe with man's face. Attention! This function causes lag!
-	Straznik.wearArmor("GRD_L");
-	Straznik.playAnimation("S_HGUARD");
-	Straznik.m_Immortal = true;
-}
-
-{
-	Straznik2 = createBot("Stra¿nik");
-	Straznik2.setPosition(-7540.14, -1217.79, 5132.39);
-	Straznik2.setAngle(349.435);
-	Straznik2.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Fighter", 2); //Babe with man's face. Attention! This function causes lag!
-	Straznik2.wearArmor("GRD_L");
-	Straznik2.playAnimation("S_HGUARD");
-	Straznik2.m_Immortal = true;
-}
-
-{
-	Straznik3 = createBot("Stra¿nik");
-	Straznik3.setPosition(-3371.02, -437.654, 1949.22);
-	Straznik3.setAngle(335.007);
-	Straznik3.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Thief", 10); //Babe with man's face. Attention! This function causes lag!
-	Straznik3.wearArmor("GRD_H");
-	Straznik3.playAnimation("S_HGUARD");
-	Straznik3.m_Immortal = true;
-}
-
-{
-	Straznik4 = createBot("Stra¿nik");
-	Straznik4.setPosition(-2992.38, -445.721, 2153.53);
-	Straznik4.setAngle(325.101);
-	Straznik4.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_FatBald", 15); //Babe with man's face. Attention! This function causes lag!
-	Straznik4.wearArmor("GRD_H");
-	Straznik4.playAnimation("S_HGUARD");
-	Straznik4.m_Immortal = true;
-}
-
-{
-	Straznik5 = createBot("Stra¿nik");
-	Straznik5.setPosition(-26880.2, 370.709, 27285.9);
-	Straznik5.setAngle(248.638);
-	Straznik5.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Psionic", 9); //Babe with man's face. Attention! This function causes lag!
-	Straznik5.wearArmor("GRD_L");
-	Straznik5.playAnimation("S_HGUARD");
-	Straznik5.m_Immortal = true;
-}
-
-{
-	Straznik6 = createBot("Stra¿nik");
-	Straznik6.setPosition(-2132.36, 211.106, -843.112);
-	Straznik6.setAngle(359.486);
-	Straznik6.setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Thief", 11); //Babe with man's face. Attention! This function causes lag!
-	Straznik6.wearArmor("GRD_H");
-	Straznik6.playAnimation("S_HGUARD");
-	Straznik6.m_Immortal = true;
-}
-
-{
-	Straznik7 = createBot("Stra¿nik");
-	Straznik7.setPosition(-1882.84, 211.03, -820.448);
-	Straznik7.setAngle(356.702);
-	Straznik7.setAdditionalVisuals("hum_body_Naked0", 6, "HUM_HEAD_BEARD2", 41); //Babe with man's face. Attention! This function causes lag!
-	Straznik7.wearArmor("GRD_H");
-	Straznik7.playAnimation("S_HGUARD");
-	Straznik7.m_Immortal = true;
-}
-
-{
+	stupidBot[2] = createBot("StraÂ¿nik");
+	stupidBot[2].setPosition(-3371.02, -437.654, 1949.22);
+	stupidBot[2].setAngle(335.007);
+	stupidBot[2].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Thief", 10); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[2].wearArmor("GRD_H");
+	stupidBot[2].playAnimation("S_HGUARD");
+	stupidBot[2].m_Immortal = true;
+	
+	stupidBot[3] = createBot("StraÂ¿nik");
+	stupidBot[3].setPosition(-2992.38, -445.721, 2153.53);
+	stupidBot[3].setAngle(325.101);
+	stupidBot[3].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_FatBald", 15); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[3].wearArmor("GRD_H");
+	stupidBot[3].playAnimation("S_HGUARD");
+	stupidBot[3].m_Immortal = true;
+	
+	stupidBot[4] = createBot("StraÂ¿nik");
+	stupidBot[4].setPosition(-26880.2, 370.709, 27285.9);
+	stupidBot[4].setAngle(248.638);
+	stupidBot[4].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Psionic", 9); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[4].wearArmor("GRD_L");
+	stupidBot[4].playAnimation("S_HGUARD");
+	stupidBot[4].m_Immortal = true;
+	
+	stupidBot[5] = createBot("StraÂ¿nik");
+	stupidBot[5].setPosition(-2132.36, 211.106, -843.112);
+	stupidBot[5].setAngle(359.486);
+	stupidBot[5].setAdditionalVisuals("hum_body_Naked0", 6, "Hum_Head_Thief", 11); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[5].wearArmor("GRD_H");
+	stupidBot[5].playAnimation("S_HGUARD");
+	stupidBot[5].m_Immortal = true;
+	
+	stupidBot[6] = createBot("StraÂ¿nik");
+	stupidBot[6].setPosition(-1882.84, 211.03, -820.448);
+	stupidBot[6].setAngle(356.702);
+	stupidBot[6].setAdditionalVisuals("hum_body_Naked0", 6, "HUM_HEAD_BEARD2", 41); //Babe with man's face. Attention! This function causes lag!
+	stupidBot[6].wearArmor("GRD_H");
+	stupidBot[6].playAnimation("S_HGUARD");
+	stupidBot[6].m_Immortal = true;
+	
 	Trenerso = createBot("Trener");
 	Trenerso.setPosition(3601.27, -1408.16, 1677.23);
 	Trenerso.setAngle(17.427);
@@ -99,9 +80,7 @@ function onInit()
 	Trenerso.wearArmor("GRD_M");
 	Trenerso.playAnimation("S_HGUARD");
 	Trenerso.m_Immortal = true;
-}
-
-{
+	
 	Trenerwo = createBot("Trener");
 	Trenerwo.setPosition(-8120.82, 4777.34, 30311.9);
 	Trenerwo.setAngle(145);
@@ -109,9 +88,7 @@ function onInit()
 	Trenerwo.wearArmor("WOL_SRED");
 	Trenerwo.playAnimation("T_STAND_2_SIT");
 	Trenerwo.m_Immortal = true;
-}
 
-{
 	Kwatermistrz = createBot("Kwatermistrz");
 	Kwatermistrz.setPosition(1979.78, 247.931, -1817.26);
 	Kwatermistrz.setAngle(75);
@@ -119,9 +96,7 @@ function onInit()
 	Kwatermistrz.wearArmor("GRD_M");
 	Kwatermistrz.playAnimation("S_HGUARD");
 	Kwatermistrz.m_Immortal = true;
-}
 
-{
 	Dozorca = createBot("Dozorca");
 	Dozorca.setPosition(-7026.14, -1061.8, 3851.68);
 	Dozorca.setAngle(45);
@@ -170,7 +145,7 @@ function timers()
                 gracz[i].minuter++;
                 if(gracz[i].minuter==60)
                 { 
-                    sendMessage(i, 250, 250, 250, "Otrzyma³eœ jeden punkt nauki.");  
+                    sendMessage(i, 250, 250, 250, "OtrzymaÂ³eÅ“ jeden punkt nauki.");  
                     gracz[i].liczbaPN++; 
                     callClientFunc(i, "setLearnPoints", gracz[i].liczbaPN); 
                     gracz[i].minuter = 0;
@@ -197,7 +172,7 @@ function timers()
 									gracz[i].stamina--;
 									callClientFunc(i, "stamina", gracz[i].stamina);
 									callClientFunc(i, "stamina", gracz[i].stamina);
-									if(gracz[i].stamina==0) sendMessageToPlayer(i, 163, 162, 218, "Zmêczenie daje siê Tobie we znaki.");	
+									if(gracz[i].stamina==0) sendMessageToPlayer(i, 163, 162, 218, "ZmÃªczenie daje siÃª Tobie we znaki.");	
 								}
 							}	
 							else
@@ -216,8 +191,8 @@ function onJoin(pid)
     spawnPlayer(pid);
     setPlayerColor(pid, 250, 250, 250);
     sendMessage(pid,  45, 136, 45, "Witaj na " + nazwaSerwera + "!");
-    sendMessage(pid, 250, 250, 250, "Twój nick to " + getPlayerName(pid) + ". Zaloguj siê na niego za pomoc¹ '/zaloguj (has³o)'.");
-    sendMessage(pid, 250, 250, 250, "Je¿eli nie posiadasz konta mo¿esz je zarejestrowaæ u¿ywaj¹c '/zarejestruj (has³o)'.");
+    sendMessage(pid, 250, 250, 250, "TwÃ³j nick to " + getPlayerName(pid) + ". Zaloguj siÃª na niego za pomocÂ¹ '/zaloguj (hasÂ³o)'.");
+    sendMessage(pid, 250, 250, 250, "JeÂ¿eli nie posiadasz konta moÂ¿esz je zarejestrowaÃ¦ uÂ¿ywajÂ¹c '/zarejestruj (hasÂ³o)'.");
     sendMessage(pid, 170, 104, 57, " ");
     setPlayerInvisible(pid, false); 
     return 1;
@@ -266,9 +241,9 @@ function onCommand(pid, command, params)
 				gracz[pid].opis = args[0];
 				sendMessage(pid, 250, 250, 250, "Ustawiono opis.");
 			}
-			else sendMessage(pid, 250, 250, 250, "Opis od 5 do 110 znakï¿½w.");
+			else sendMessage(pid, 250, 250, 250, "Opis od 5 do 110 znakÃ¯Â¿Â½w.");
 		}
-		else sendMessage(pid, 250, 250, 250, "U¿yj: /opis (tekst)");
+		else sendMessage(pid, 250, 250, 250, "UÂ¿yj: /opis (tekst)");
 	}
 	break;
 			
@@ -299,13 +274,13 @@ function onCommand(pid, command, params)
             }
             else
             {
-                sendMessage(pid, 160, 150, 157, "B³êdne ID");
+                sendMessage(pid, 160, 150, 157, "BÂ³Ãªdne ID");
 				break;
             }
         }    
         else
         {
-            sendMessage(pid, 160, 150, 157, "U¿yj: /w (id) (treœæ)");
+            sendMessage(pid, 160, 150, 157, "UÂ¿yj: /w (id) (treÅ“Ã¦)");
         }
 
     }    
@@ -360,12 +335,12 @@ function onCommand(pid, command, params)
             {
 	            {
 				   callClientFunc(pid, "setFreeze", true);
-                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz zbieraæ ry¿½.");
+                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz zbieraÃ¦ ryÂ¿Â½.");
 				   callClientFunc(pid, "playAnimation", "T_PLUNDER");
 				   gracz[pid].pracuje = true;
 				   local timer = setTimer(function()
                    {
-				   sendMessage(pid, 250, 250, 250, "Zebra³eœ trochê ry¿u");
+				   sendMessage(pid, 250, 250, 250, "ZebraÂ³eÅ“ trochÃª ryÂ¿u");
                    callClientFunc(pid, "giveItem", "ITFORICE", 1);
 				   gracz[pid].pracuje = false;
 				   callClientFunc(pid, "setFreeze", false);
@@ -378,7 +353,7 @@ function onCommand(pid, command, params)
             }
 			else
 			{
-			sendMessage(pid, 250, 250, 250, "Jesteœ zbyt zmêczony.");
+			sendMessage(pid, 250, 250, 250, "JesteÅ“ zbyt zmÃªczony.");
             }         
 	    } 
         else 
@@ -388,7 +363,7 @@ function onCommand(pid, command, params)
     }
 	else 
 	{
-	sendMessage(pid, 250, 250, 250, "Zbierasz ju¿.");
+	sendMessage(pid, 250, 250, 250, "Zbierasz juÂ¿.");
 	}
    }	
   }	
@@ -430,12 +405,12 @@ function onCommand(pid, command, params)
        {
 	            {
 				   callClientFunc(pid, "setFreeze", true);
-                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz piec miêso");
+                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz piec miÃªso");
 				   callClientFunc(pid, "playAnimation", "S_PAN_S0");
 				   gracz[pid].pracuje = true;
 				   local timer = setTimer(function()
                    {
-				   sendMessage(pid, 250, 250, 250, "Usma¿y³eœ miêso");
+				   sendMessage(pid, 250, 250, 250, "UsmaÂ¿yÂ³eÅ“ miÃªso");
                    callClientFunc(pid, "removeItem", "ITFO_MUTTONRAW", 1);
 				   callClientFunc(pid, "giveItem", "ITFO_MUTTON", 1);
 				   gracz[pid].pracuje = false;
@@ -447,12 +422,12 @@ function onCommand(pid, command, params)
 	    } 
         else 
 		{
-		sendMessage(pid, 250, 250, 250, "Nie posiadasz surowego miêsa.");	
+		sendMessage(pid, 250, 250, 250, "Nie posiadasz surowego miÃªsa.");	
 	    }
     }
 	else 
 	{
-	sendMessage(pid, 250, 250, 250, "Sma¿ysz ju¿.");
+	sendMessage(pid, 250, 250, 250, "SmaÂ¿ysz juÂ¿.");
 	}
    }	
   }	
@@ -493,12 +468,12 @@ function onCommand(pid, command, params)
             {
 	            {
 				   callClientFunc(pid, "setFreeze", true);
-                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz kopaï¿½.");
+                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz kopaÃ¯Â¿Â½.");
 				   callClientFunc(pid, "playAnimation", "S_ORE_S1");
 				   gracz[pid].pracuje = true;
 				   local timer = setTimer(function()
                    {
-				   sendMessage(pid, 250, 250, 250, "Wydoby³eœ bry³kê rudy.");
+				   sendMessage(pid, 250, 250, 250, "WydobyÂ³eÅ“ bryÂ³kÃª rudy.");
                    callClientFunc(pid, "giveItem", "ITMI_NUGGET", 1);
 				   gracz[pid].pracuje = false;
 				   callClientFunc(pid, "setFreeze", false);
@@ -511,7 +486,7 @@ function onCommand(pid, command, params)
             }
 			else
 			{
-			sendMessage(pid, 250, 250, 250, "Jesteœ zbyt zmêczony.");
+			sendMessage(pid, 250, 250, 250, "JesteÅ“ zbyt zmÃªczony.");
             }         
 	    } 
         else 
@@ -521,7 +496,7 @@ function onCommand(pid, command, params)
     }
 	else 
 	{
-	sendMessage(pid, 250, 250, 250, "Kopiesz ju¿.");
+	sendMessage(pid, 250, 250, 250, "Kopiesz juÂ¿.");
 	}
    }	
   }	
@@ -556,12 +531,12 @@ function onCommand(pid, command, params)
             {
 	            {
 				   callClientFunc(pid, "setFreeze", true);
-                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz ³owiæ.");
+                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz Â³owiÃ¦.");
 				   callClientFunc(pid, "playAnimation", "S_TREASURE_S0");
 				   gracz[pid].pracuje = true;
 				   local timer = setTimer(function()
                    {
-				   sendMessage(pid, 250, 250, 250, "Z³apa³eœ rybê½.");
+				   sendMessage(pid, 250, 250, 250, "ZÂ³apaÂ³eÅ“ rybÃªÂ½.");
                    callClientFunc(pid, "giveItem", "ITFO_FISH", 1);
 				   gracz[pid].pracuje = false;
 				   callClientFunc(pid, "setFreeze", false);
@@ -574,17 +549,17 @@ function onCommand(pid, command, params)
             }
 			else
 			{
-			sendMessage(pid, 250, 250, 250, "Jesteœ zbyt zmêczony.");
+			sendMessage(pid, 250, 250, 250, "JesteÅ“ zbyt zmÃªczony.");
             }         
 	    } 
         else 
 		{
-		sendMessage(pid, 250, 250, 250, "Nie posiadasz wêdki.");	
+		sendMessage(pid, 250, 250, 250, "Nie posiadasz wÃªdki.");	
 	    }
     }
 	else 
 	{
-	sendMessage(pid, 250, 250, 250, "£owisz ju¿½.");
+	sendMessage(pid, 250, 250, 250, "Â£owisz juÂ¿Â½.");
 	}
    }	
   }	
@@ -611,12 +586,12 @@ function onCommand(pid, command, params)
             {
 	            {
 				   callClientFunc(pid, "setFreeze", true);
-                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz pi³owaæ.");
+                   sendMessage(pid, 250, 250, 250, "Rozpoczynasz piÂ³owaÃ¦.");
 				   callClientFunc(pid, "playAnimation", "S_BAUMSAEGE_S1");
 				   gracz[pid].pracuje = true;
 				   local timer = setTimer(function()
                    {
-				   sendMessage(pid, 250, 250, 250, "Zdoby³eœ kawa³ek drewna.");
+				   sendMessage(pid, 250, 250, 250, "ZdobyÂ³eÅ“ kawaÂ³ek drewna.");
                    callClientFunc(pid, "giveItem", "ITMI_WOOD", 1);
 				   gracz[pid].pracuje = false;
 				   callClientFunc(pid, "setFreeze", false);
@@ -629,17 +604,17 @@ function onCommand(pid, command, params)
             }
 			else
 			{
-			sendMessage(pid, 250, 250, 250, "Jesteœ zbyt zmêczony.");
+			sendMessage(pid, 250, 250, 250, "JesteÅ“ zbyt zmÃªczony.");
             }         
 	    } 
         else 
 		{
-		sendMessage(pid, 250, 250, 250, "Nie posiadasz pi³y");	
+		sendMessage(pid, 250, 250, 250, "Nie posiadasz piÂ³y");	
 	    }
     }
 	else 
 	{
-	sendMessage(pid, 250, 250, 250, "Pi³ujesz ju¿.");
+	sendMessage(pid, 250, 250, 250, "PiÂ³ujesz juÂ¿.");
 	}
    }	
   }	
@@ -713,13 +688,13 @@ break;
                         if(args[3]==-1) args[3] = getPlayerVisual(pid).headTexture;
                         callClientFunc(pid, "setAdditionalVisual", args[0], args[2], args[1], args[3]);
 						callClientFunc(pid, "sendVisual");
-                        sendMessage(pid, 160, 52, 86, "Wygl¹d zosta³ zmieniony.");
+                        sendMessage(pid, 160, 52, 86, "WyglÂ¹d zostaÂ³ zmieniony.");
                         break;
                 }
                 else
                 {
-                    sendMessage(pid, 160, 52, 86, "U¿yj: /wyglad (bodyModel: 0-1) (headModel 0-21) (bodyTexture 0-21) (headTexture 0-181)");
-                    sendMessage(pid, 160, 52, 86, "Jeœli chcesz zachowaæ obecn¹ wartoœæ parametru, U¿yj -1.");
+                    sendMessage(pid, 160, 52, 86, "UÂ¿yj: /wyglad (bodyModel: 0-1) (headModel 0-21) (bodyTexture 0-21) (headTexture 0-181)");
+                    sendMessage(pid, 160, 52, 86, "JeÅ“li chcesz zachowaÃ¦ obecnÂ¹ wartoÅ“Ã¦ parametru, UÂ¿yj -1.");
                 }    
     }
     break;
@@ -744,12 +719,12 @@ break;
 							gracz[pid].zalogowany=1;
 							zapiszKonto(pid);			
 						}
-						else sendMessage(pid, 119, 127, 127, "Nick zajï¿½ty!");
+						else sendMessage(pid, 119, 127, 127, "Nick zajÃ¯Â¿Â½ty!");
 					}
-					else sendMessage(pid,119, 127, 127, "Has³o od 3 do 20 znaków.");
+					else sendMessage(pid,119, 127, 127, "HasÂ³o od 3 do 20 znakÃ³w.");
 				
 				}
-				else sendMessage(pid, 119, 127, 127, "Tip: /zarejestruj (has³o)");
+				else sendMessage(pid, 119, 127, 127, "Tip: /zarejestruj (hasÂ³o)");
 			}
 		}
 		break;
@@ -777,14 +752,14 @@ break;
                                 haslo = md5(haslo); 
                                 if(buffer==haslo) 
                                 {
-                                    sendMessage(pid, 45, 136, 45, "Zosta³eœ poprawnie zalogowany. Mi³ej gry!");
+                                    sendMessage(pid, 45, 136, 45, "ZostaÂ³eÅ“ poprawnie zalogowany. MiÂ³ej gry!");
                                     gracz[pid].haslo = haslo;
                                     gracz[pid].zalogowany=1;
                                     setPlayerInvisible(pid, false); 
                                 }    
                                 else 
                                 {
-                                     sendMessage(pid, 119, 127, 127, "B³êdne has³o.");
+                                     sendMessage(pid, 119, 127, 127, "BÂ³Ãªdne hasÂ³o.");
                                      fileClose(file);
                                      return 1;
                                 }
@@ -859,7 +834,7 @@ zapiszItemy(pid);
                         }    
                         else sendMessage(pid, 119, 127, 127, "Konto nie istnieje.");
                 }
-                else sendMessage(pid, 119, 127, 127, "Tip: /zaloguj (hasï¿½o)");
+                else sendMessage(pid, 119, 127, 127, "Tip: /zaloguj (hasÃ¯Â¿Â½o)");
             }
         }
         break;
@@ -878,18 +853,18 @@ zapiszItemy(pid);
 					local recipientPosition = getPlayerPosition(i);
 					if(getDistance3D(playerPosition.x,playerPosition.y,playerPosition.z,recipientPosition.x,recipientPosition.y,recipientPosition.z) < 500)
 					{
-						sendMessage(i,250, 250, 250,getPlayerName(pid) + " mï¿½wi: " + params);
+						sendMessage(i,250, 250, 250,getPlayerName(pid) + " mÃ¯Â¿Â½wi: " + params);
 					}	
 					else if(getDistance3D(playerPosition.x,playerPosition.y,playerPosition.z,recipientPosition.x,recipientPosition.y,recipientPosition.z) < 1000)
 					{
-						sendMessage(i,118, 113, 113,getPlayerName(pid) + " mï¿½wi: " + message);
+						sendMessage(i,118, 113, 113,getPlayerName(pid) + " mÃ¯Â¿Â½wi: " + message);
 					}	
 				}
 			}
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /l (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /l (treÅ“Ã¦)");
 	}
 	break; 
 	
@@ -912,7 +887,7 @@ zapiszItemy(pid);
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /k (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /k (treÅ“Ã¦)");
 	}
 	log("k", format("(%s) %s: %s", getDate(), getPlayerName(pid), message));
 	break;
@@ -939,7 +914,7 @@ zapiszItemy(pid);
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /s (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /s (treÅ“Ã¦)");
 	}
 	break;
 	
@@ -963,7 +938,7 @@ zapiszItemy(pid);
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /me (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /me (treÅ“Ã¦)");
 	
 	}
 	break;
@@ -988,7 +963,7 @@ zapiszItemy(pid);
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /do (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /do (treÅ“Ã¦)");
 	}
 	break;
 	
@@ -1012,7 +987,7 @@ zapiszItemy(pid);
 			break;
 		}
 		else
-			sendMessage(pid, 160, 150, 157, "Tip: /b (treœæ)");
+			sendMessage(pid, 160, 150, 157, "Tip: /b (treÅ“Ã¦)");
 	}
 	break;
 	}
@@ -1029,11 +1004,11 @@ function onMessage(id, message)
             local recipientPosition = getPlayerPosition(i);
             if(getDistance3D(playerPosition.x,playerPosition.y,playerPosition.z,recipientPosition.x,recipientPosition.y,recipientPosition.z) < 500)
             {
-                sendMessage(i,250, 250, 250,getPlayerName(id) + " mï¿½wi: " + message);
+                sendMessage(i,250, 250, 250,getPlayerName(id) + " mÃ¯Â¿Â½wi: " + message);
             }    
             else if(getDistance3D(playerPosition.x,playerPosition.y,playerPosition.z,recipientPosition.x,recipientPosition.y,recipientPosition.z) < 1000)
             {
-                sendMessage(i,118, 113, 113,getPlayerName(id) + " mï¿½wi: " + message);
+                sendMessage(i,118, 113, 113,getPlayerName(id) + " mÃ¯Â¿Â½wi: " + message);
             }    
         }
     }
@@ -1104,8 +1079,8 @@ function checkItem(pid, inst)
 
 function sendW(pid, cid, str)
 {
-    sendMessage(pid, 255, 244, 0, ">> Wiadomoï¿½ï¿½ do (" + cid + ") " + getPlayerName(cid) + ": " + str);
-    sendMessage(cid, 255, 133, 0, "<< Wiadomoï¿½ï¿½ od (" + pid + ") " + getPlayerName(pid) + ": " + str);
+    sendMessage(pid, 255, 244, 0, ">> WiadomoÃ¯Â¿Â½Ã¯Â¿Â½ do (" + cid + ") " + getPlayerName(cid) + ": " + str);
+    sendMessage(cid, 255, 133, 0, "<< WiadomoÃ¯Â¿Â½Ã¯Â¿Â½ od (" + pid + ") " + getPlayerName(pid) + ": " + str);
     return 1;
 }
 
